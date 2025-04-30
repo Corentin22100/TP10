@@ -1,0 +1,17 @@
+
+<div style="padding: 20px;">
+    <h1>Liste des Concerts</h1>
+    <p>Nombre de concerts trouvés : {{ concerts.length }}</p>
+    <div *ngFor="let concert of concerts" class="concert-card">
+      <h2>{{ concert.nom }} - {{ concert.artiste }}</h2>
+      <p><strong>Lieu :</strong> {{ concert.lieu }}</p>
+      <p><strong>Date :</strong> {{ concert.date }}</p>
+      <p><strong>Prix :</strong> {{ concert.prix }} €</p> 
+      <p><strong>Genre :</strong> {{ concert.genre }}</p>
+      <p><strong>Description :</strong> {{ concert.description }}</p>
+      <p><strong>Capacité :</strong> {{ concert.capacite }} places</p>
+    </div>
+    
+
+  <app-ajout-concert (concertAjoute)="ajouterConcert($event)"></app-ajout-concert>
+  

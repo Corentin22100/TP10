@@ -1,0 +1,20 @@
+<button (click)="formVisible = !formVisible">
+    {{ formVisible ? 'Annuler' : 'Ajouter un Concert' }}
+  </button>
+  
+  <div *ngIf="formVisible" class="form-container">
+    <h2>Ajouter un Concert</h2>
+    <form (ngSubmit)="envoyerConcert()" #form="ngForm">
+      <input type="text" placeholder="Nom" [(ngModel)]="nouveauConcert.nom" name="nom" required />
+      <input type="text" placeholder="Artiste" [(ngModel)]="nouveauConcert.artiste" name="artiste" required />
+      <input type="text" placeholder="Lieu" [(ngModel)]="nouveauConcert.lieu" name="lieu" required />
+      <input type="date" [(ngModel)]="nouveauConcert.date" name="date" required />
+      <input type="number" placeholder="Prix" [(ngModel)]="nouveauConcert.prix" name="prix" />
+      <input type="text" placeholder="Genre" [(ngModel)]="nouveauConcert.genre" name="genre" required />
+      <textarea placeholder="Description" [(ngModel)]="nouveauConcert.description" name="description" required></textarea>
+      <input type="number" placeholder="Capacité" [(ngModel)]="nouveauConcert.capacite" name="capacite"/>
+  
+      <button type="submit" [disabled]="!form.form.valid">Ajouter</button>
+    </form>
+  </div>
+  

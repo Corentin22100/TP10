@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajout Utilisateur</title>
+</head>
+<body>
+<h2>Ajouter un utilisateur</h2>
+<form method="POST" action="/UserInfo">
+    Nom: <input type="text" name="nom" required><br>
+    Email: <input type="email" name="email" required><br>
+    Mot de passe: <input type="password" name="motDePasse" required><br>
+    Type d'utilisateur:
+    <select name="typeUtilisateur">
+        <option value="1">Admin</option>
+        <option value="2">Utilisateur</option>
+    </select><br>
+    <input type="submit" value="Ajouter">
+</form>
+</body>
+</html>
